@@ -13,7 +13,7 @@
   - [9. 여러개의 input 상태 관리하기](./basic/09-multiple-inputs.md)
   - [10. useRef 로 특정 DOM 선택하기](./basic/10-useRef.md)
   - [11. 배열 렌더링하기](./basic/11-render-array.md)
-  - [12. useRef 로 useRef 로 컴포넌트 안의 변수 만들기](./basic/12-variable-with-useRef.md)
+  - [12. useRef 로 컴포넌트 안에 변수 만들기](./basic/12-variable-with-useRef.md)
   - [13. 배열에 항목 추가하기](./basic/13-array-insert.md)
   - [14. 배열에 항목 제거하기](./basic/14-array-remove.md)
   - [15. 배열에 항목 수정하기](./basic/15-array-modify.md)
