@@ -1,0 +1,14 @@
+{
+  "description": "Customize the footer of each article, you can add copyright and document reversion of time",
+  "devDependencies": {},
+  "directories": {},
+  "engines": {
+    "gitbook": ">=3.2.2"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gitbook-plugin-comment",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.0.5"
+}

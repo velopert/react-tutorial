@@ -2,5 +2,8 @@
   "name": "docs",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gitbook-plugin-edit-link": "^2.0.2"
+  }
 }
