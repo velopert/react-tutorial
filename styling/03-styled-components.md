@@ -592,7 +592,7 @@ Button.defaultProps = {
 export default Button;
 ```
 
-`props.theme.palett.blue` 이런식으로 값을 조회하는 대신에 비구조화 할당 문법을 사용하여 가독성을 높여주었습니다.
+`props.theme.palette.blue` 이런식으로 값을 조회하는 대신에 비구조화 할당 문법을 사용하여 가독성을 높여주었습니다.
 
 참고로 위 로직은 다음과 같이 색상에 관련된 코드를 분리하여 사용 할 수도 있습니다.
 

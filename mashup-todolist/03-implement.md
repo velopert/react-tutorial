@@ -176,10 +176,10 @@ const Remove = styled.div`
   color: #dee2e6;
   font-size: 24px;
   cursor: pointer;
+  opacity: 0;
   &:hover {
     color: #ff6b6b;
   }
-  display: none;
 `;
 
 const TodoItemBlock = styled.div`
@@ -189,7 +189,7 @@ const TodoItemBlock = styled.div`
   padding-bottom: 12px;
   &:hover {
     ${Remove} {
-      display: initial;
+      opacity: 1;
     }
   }
 `;
@@ -281,7 +281,6 @@ const CircleButton = styled.button`
   cursor: pointer;
   width: 80px;
   height: 80px;
-  display: block;
   align-items: center;
   justify-content: center;
   font-size: 60px;
@@ -293,9 +292,7 @@ const CircleButton = styled.button`
   border-radius: 50%;
   border: none;
   outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 
   transition: 0.125s all ease-in;
   ${props =>
