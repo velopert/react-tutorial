@@ -10,39 +10,31 @@
 
 #### src/HistorySample.js
 ```javascript
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
-class HistorySample extends Component {
-  // 뒤로가기
-  handleGoBack = () => {
-    this.props.history.goBack();
+function HistorySample({ history }) {
+  const goBack = () => {
+    history.goBack();
   };
 
-  // 홈으로 이동
-  handleGoHome = () => {
-    this.props.history.push('/home');
+  const goHome = () => {
+    history.push('/');
   };
 
-  componentDidMount() {
-    // 이걸 설정하고 나면 페이지에 변화가 생기려고 할 때 마다 정말 나갈거냐고 질문
-    this.unblock = this.props.history.block('정말 떠나실건가요?');
-  }
+  useEffect(() => {
+    console.log(history);
+    const unblock = history.block('정말 떠나실건가요?');
+    return () => {
+      unblock();
+    };
+  }, [history]);
 
-  componentWillUnmount() {
-    // 컴포넌트가 언마운트 되면, 그만 물음
-    if (this.unblock) {
-      this.unblock();
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleGoBack}>뒤로</button>
-        <button onClick={this.handleGoHome}>홈으로</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <button onClick={goBack}>뒤로가기</button>
+      <button onClick={goHome}>홈으로</button>
+    </div>
+  );
 }
 
 export default HistorySample;
