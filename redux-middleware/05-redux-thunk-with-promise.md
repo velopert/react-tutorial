@@ -86,7 +86,7 @@ const GET_POST_ERROR = 'GET_POST_ERROR';
 export const getPosts = () => async dispatch => {
   dispatch({ type: GET_POSTS }); // 요청이 시작됨
   try {
-    const posts = postsAPI.getPosts(); // API 호출
+    const posts = await postsAPI.getPosts(); // API 호출
     dispatch({ type: GET_POSTS_SUCCESS, posts }); // 성공
   } catch (e) {
     dispatch({ type: GET_POSTS_ERROR, error: e }); // 실패
@@ -97,7 +97,7 @@ export const getPosts = () => async dispatch => {
 export const getPost = id => async dispatch => {
   dispatch({ type: GET_POST }); // 요청이 시작됨
   try {
-    const post = postsAPI.getPostById(id); // API 호출
+    const post = await postsAPI.getPostById(id); // API 호출
     dispatch({ type: GET_POST_SUCCESS, post }); // 성공
   } catch (e) {
     dispatch({ type: GET_POST_ERROR, error: e }); // 실패

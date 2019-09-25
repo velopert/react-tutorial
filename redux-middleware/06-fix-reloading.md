@@ -301,7 +301,7 @@ export const createPromiseThunkById = (
 
   return param => async dispatch => {
     const id = idSelector(param);
-    dispatch({ type, param, meta: id });
+    dispatch({ type, meta: id });
     try {
       const payload = await promiseCreator(param);
       dispatch({ type: SUCCESS, payload, meta: id });
@@ -383,7 +383,7 @@ export const getPost = createPromiseThunkById(GET_POST, postsAPI.getPostById);
 // initialState 쪽도 반복되는 코드를 initial() 함수를 사용해서 리팩토링 했습니다.
 const initialState = {
   posts: reducerUtils.initial(),
-  post: reducerUtils.initial()
+  post: {}
 };
 
 export default function posts(state = initialState, action) {
