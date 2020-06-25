@@ -220,6 +220,8 @@ import styled from 'styled-components';
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -309,6 +311,8 @@ import { darken, lighten } from 'polished';
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -396,6 +400,8 @@ import { darken, lighten } from 'polished';
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -447,6 +453,8 @@ import { darken, lighten } from 'polished';
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -548,6 +556,8 @@ import { darken, lighten } from 'polished';
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -620,6 +630,8 @@ const colorStyles = css`
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -704,6 +716,8 @@ const sizeStyles = css`
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -863,6 +877,8 @@ const sizeStyles = css`
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -961,6 +977,8 @@ const sizeStyles = css`
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;
@@ -1147,6 +1165,8 @@ const fullWidthStyle = css`
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
   border-radius: 4px;

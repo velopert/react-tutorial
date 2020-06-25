@@ -77,6 +77,8 @@ $blue: #228be6; // 주석 선언
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
@@ -235,6 +237,8 @@ $blue: #228be6;
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
@@ -330,6 +334,8 @@ $blue: #228be6;
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
@@ -421,6 +427,8 @@ $pink: #f06595;
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
@@ -549,6 +557,8 @@ $pink: #f06595;
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
@@ -727,6 +737,8 @@ $pink: #f06595;
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
@@ -895,6 +907,8 @@ $pink: #f06595;
 
 .Button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
   outline: none;
