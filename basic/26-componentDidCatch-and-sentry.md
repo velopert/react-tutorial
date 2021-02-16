@@ -86,15 +86,15 @@ export default App;
 
 ![](https://i.imgur.com/iGioIFG.png)
 
-이렇게 에러가 발생하게 됩니다. 이 화면은 개발환경에서만 보여지는 에러화면인데요, 우측 상단의 X 버튼을 눌러보시면 실제 환경에서 보여지는 화면이 나타나게 됩니다.
+이렇게 에러가 발생하게 됩니다. 이 화면은 개발 환경에서만 보여지는 에러 화면인데요, 우측 상단의 X 버튼을 눌러보시면 실제 환경에서 보여지는 화면이 나타나게 됩니다.
 
 ![](https://i.imgur.com/sdt9TRl.png)
 
 실제 환경에서는 아무것도 렌더링되지 않고 흰 페이지만 나타나게 됩니다. 만약에 여러분이 만든 서비스에서 사용자가 이러한 상황을 겪게 된다면 상당히 당황스럽겠지요?
 
-이번 튜토리얼에서는 이런 상황에 이렇게 흰 화면을 보여주는 대신에, 에러가 발생했다는 것을 알려주는 방법에 대하여 알아볼것입니다.
+이번 튜토리얼에서는 이런 상황에 이렇게 흰 화면을 보여주는 대신에, 에러가 발생했다는 것을 알려주는 방법에 대하여 알아볼 것입니다.
 
-이에 대하여 진행하기 전에 어떤 상황에 또 이런 에러가 발생하는지 알아보고, 에러를 방지 할 수 있는 방법에 대해서도 알아보겠습니다.
+이에 대하여 진행하기 전에 어떤 상황에 또 이런 에러가 발생하는지 알아보고, 에러를 방지할 수 있는 방법에 대해서도 알아보겠습니다.
 
 일단, 방금과 같은 에러를 방지하려면 User 컴포넌트에서 다음과 같은 작업을 하시면 됩니다.
 
@@ -125,9 +125,9 @@ export default User;
 
 이렇게 하시면 `user` 값이 존재하지 않는다면 `null` 을 렌더링하게 됩니다. 리액트 컴포넌트에서 `null` 을 렌더링하게되면 아무것도 나타나지 않게 됩니다. 이를 "null checking" 이라고 부릅니다.
 
-코드를 이렇게 작성해주시면, 화면에 아무것도 보여지지 않는것은 마찬가지이지만, 적어도 에러는 발생하지 않습니다. 보통 데이터를 네트워크 요청을 통하여 나중에 데이터를 받아오게 되는 상황이 발생하는 경우 이렇게 데이터가 없으면 `null` 을 보여주거나, 아니면 `<div>로딩중</div>`과 같은 결과물을 렌더링하시면 됩니다.
+코드를 이렇게 작성해주시면, 화면에 아무것도 보여지지 않는 것은 마찬가지이지만, 적어도 에러는 발생하지 않습니다. 보통 데이터를 네트워크 요청을 통하여 나중에 데이터를 받아오게 되는 상황이 발생하는 경우 이렇게 데이터가 없으면 `null` 을 보여주거나, 아니면 `<div>로딩중</div>`과 같은 결과물을 렌더링하시면 됩니다.
 
-에러가 발생 할 수 있는 또 다른 상황에 대해서 알아봅시다.
+에러가 발생할 수 있는 또 다른 상황에 대해서 알아봅시다.
 
 ```javascript
 function Users({ users }) {
@@ -201,11 +201,11 @@ Users.defaultProps = {
 };
 ```
 
-다른 솔루션으로는 [PropTypes](https://ko.reactjs.org/docs/typechecking-with-proptypes.html) 라는 것을 사용하는 방법도 있습니다. PropTypes 를 사용하면 필요한 데이터를 넣지 않았을 때 개발 단계에서 경고를 볼 수 있기 때문에 실수로 props 설정을 깜박하는 일을 방지 할 수 있습니다. 단, 사용법이 좀 불편하고 귀찮기 때문에 이를 사용하는 것 대신에 나중에 TypeScript 또는 Flow 를 사용해서 관리 하는 것을 권장 드립니다. (이 강좌에서는 추후 TypeScript 를 사용하게 됩니다.)
+다른 솔루션으로는 [PropTypes](https://ko.reactjs.org/docs/typechecking-with-proptypes.html) 라는 것을 사용하는 방법도 있습니다. PropTypes 를 사용하면 필요한 데이터를 넣지 않았을 때 개발 단계에서 경고를 볼 수 있기 때문에 실수로 props 설정을 깜박하는 일을 방지할 수 있습니다. 단, 사용법이 좀 불편하고 귀찮기 때문에 이를 사용하는 것 대신에 나중에 TypeScript 또는 Flow 를 사용해서 관리 하는 것을 권장 드립니다. (이 강좌에서는 추후 TypeScript 를 사용하게 됩니다.)
 
 ### componentDidCatch 로 에러 잡아내기
 
-자, 이번에는 `componentDidCatch` 생명주기 메서드를 사용하여 우리가 사전에 예외처리를 하지 않은 에러가 발생 했을 때 사용자에게 에러가 발생했다고 알려주는 화면을 보여줘봅시다.
+자, 이번에는 `componentDidCatch` 생명주기 메서드를 사용하여 우리가 사전에 예외 처리를 하지 않은 에러가 발생했을 때 사용자에게 에러가 발생했다고 알려주는 화면을 보여줘봅시다.
 
 우선, src 디렉터리에 ErrorBoundary 라는 컴포넌트를 만들어보세요.
 
@@ -241,7 +241,7 @@ class ErrorBoundary extends Component {
 export default ErrorBoundary;
 ```
 
-여기서 `componentDidCatch` 메서드에는 두개의 파라미터를 사용하게 되는데 첫번째 파라미터는 에러의 내용, 두번째 파라미터에서는 에러가 발생한 위치를 알려줍니다.
+여기서 `componentDidCatch` 메서드에는 두 개의 파라미터를 사용하게 되는데 첫 번째 파라미터는 에러의 내용, 두 번째 파라미터에서는 에러가 발생한 위치를 알려줍니다.
 
 이 메서드에서 현재 컴포넌트 상태 `error` 를 `true` 로 설정을 해주고, `render()` 메서드에서는 만약 `this.state.error` 값이 `true` 라면 에러가 발생했다는 문구를 렌더링하도록 하고 그렇지 않다면 `this.props.children` 을 렌더링하도록 처리를 해주세요.
 
@@ -269,7 +269,7 @@ function App() {
 export default App;
 ```
 
-그리고 이전에 User 컴포넌트에서 null checking 을 하는 코드를 주석처리해보세요.
+그리고 이전에 User 컴포넌트에서 null checking 을 하는 코드를 주석 처리해보세요.
 
 #### User.js
 
@@ -308,7 +308,7 @@ export default User;
 
 `componentDidCatch` 를 사용해서 앱에서 에러가 발생했을 때 사용자에게 에러가 발생했음을 인지시켜줄 수 는 있지만, `componentDidCatch` 가 실제로 호출되는 일은 서비스에서 "없어야 하는게" 맞습니다. 만약에 우리가 놓진 에러가 있다면, 우리가 이를 알아내어 예외 처리를 해주어야 합니다.
 
-우리는 발견해내지 못했지만, 사용자가 발견하게 되는 그런 오류들이 있겠죠? 그럴 때는 `componentDidCatch` 에서 `error` 와 `info` 값을 네트워크를 통하여 다른 곳으로 전달을 해주면 됩니다. 다만 이를 위해서 따로 서버를 만드는건 굉장히 번거로운 작업입니다. 굉장히 괜찮은 솔루션으로, [Sentry](https://sentry.io) 라는 상용서비스가 있습니다. 돈내고 쓰면 더 많은 작업을 할 수 있지만, 무료 모델로도 충분히 사용을 할 수 있으므로, 장기적으로 작업하는 프로젝트에 적용을 하시는 것을 권장합니다.
+우리는 발견해내지 못했지만, 사용자가 발견하게 되는 그런 오류들이 있겠죠? 그럴 때는 `componentDidCatch` 에서 `error` 와 `info` 값을 네트워크를 통하여 다른 곳으로 전달을 해주면 됩니다. 다만 이를 위해서 따로 서버를 만드는건 굉장히 번거로운 작업입니다. 굉장히 괜찮은 솔루션으로, [Sentry](https://sentry.io) 라는 상용 서비스가 있습니다. 돈내고 쓰면 더 많은 작업을 할 수 있지만, 무료 모델로도 충분히 사용을 할 수 있으므로, 장기적으로 작업하는 프로젝트에 적용을 하시는 것을 권장합니다.
 
 ![](https://i.imgur.com/HhBCTcs.png)
 
@@ -362,7 +362,7 @@ serviceWorker.unregister();
 
 ![](https://i.imgur.com/jjKTGGK.png)
 
-그런데 여기서 끝이 아닙니다. 이렇게 에러가 발생 했을 때 Sentry 쪽으로 전달이 되는 것은 개발모드일땐 별도의 작업을 하지 않아도 잘 되지만, 나중에 프로젝트를 완성하여 실제 배포를 하게 됐을 때는 `componentDidCatch` 로 이미 에러를 잡아줬을 경우 Sentry 에게 자동으로 전달이 되지 않습니다.
+그런데 여기서 끝이 아닙니다. 이렇게 에러가 발생했을 때 Sentry 쪽으로 전달이 되는 것은 개발 모드일 땐 별도의 작업을 하지 않아도 잘 되지만, 나중에 프로젝트를 완성하여 실제 배포를 하게 됐을 때는 `componentDidCatch` 로 이미 에러를 잡아줬을 경우 Sentry 에게 자동으로 전달이 되지 않습니다.
 
 때문에 ErrorBoundary 에서 다음과 같이 처리를 해주셔야 합니다.
 
@@ -402,14 +402,14 @@ class ErrorBoundary extends Component {
 export default ErrorBoundary;
 ```
 
-`componentDidCatch` 에서 `process.env.NODE_ENV` 값을 조회했는데요, 이를 통하여 현재 환경에 개발 환경인지 프로덕션 환경인지 (production / development) 확인 할 수 있습니다. 개발 환경에서는 `captureException` 을 사용 할 필http://localhost:5000/요가 없으므로 프로덕션에서만 이 작업을 해주었습니다.
+`componentDidCatch` 에서 `process.env.NODE_ENV` 값을 조회했는데요, 이를 통하여 현재 환경에 개발 환경인지 프로덕션 환경인지 (production / development) 확인할 수 있습니다. 개발 환경에서는 `captureException` 을 사용할 필요가 없으므로 프로덕션 http://localhost:5000/ 에서만 이 작업을 해주었습니다.
 
 ### 프로덕션 환경에서 잘 작동하는지 확인하기
 
 프로덕션 환경에서도 잘 작동하는지 확인하기 위해서는 프로젝트를 빌드해주어야 합니다. 프로젝트 디렉터리에서 다음 명령어를 실행해주세요.
 
 ```
-$yarn build
+$ yarn build
 ```
 
 조금 기다리면 결과물이 build 디렉터리에 나타납니다. build 디렉터리에 있는 파일들을 제공하는 서버를 실행하기 위해서는 다음 명령어를 실행해주세요.
@@ -418,22 +418,22 @@ $yarn build
 $ npx serve ./build
 ```
 
-[serve](https://www.npmjs.com/package/serve) 는 웹서버를 열어서 특정 디렉터리에 있는 파일을 제공해주는 도구입니다.
+[serve](https://www.npmjs.com/package/serve) 는 웹 서버를 열어서 특정 디렉터리에 있는 파일을 제공해주는 도구입니다.
 
 http://localhost:5000/ 을 브라우저로 들어가본 뒤, Sentry 에 새로운 항목이 추가됐는지 확인해보세요.
 
 ![](https://i.imgur.com/ZBqyGJ1.png)
 
-이번에는 아까와 달리 에러가 어디서 발생했는지 상세한 정보를 알아보기 쉽지가 않은데요,
+이번에는 아까와 달리 에러가 어디서 발생했는지 상세한 정보를 알아보기 쉽지가 않은데요.
 
 ![](https://i.imgur.com/2rfDI91.png)
 
-이는 빌드 과정에서 코드가 minify 되면서 이름이 c, Xo, Ui, qa 이런식으로 축소됐기 때문입니다.
+이는 빌드 과정에서 코드가 minify 되면서 이름이 c, Xo, Ui, qa 이런 식으로 축소됐기 때문입니다.
 
 만약에 코드 위치를 제대로 파악을 하고 싶다면 이 [링크](https://docs.sentry.io/platforms/javascript/sourcemaps/#webpack) 를 참조하시면 됩니다.
 
-Sentry 에서 minified 되지 않은 이름을 보려면 Sourcemap 이란것을 사용해야 하는데요, 빌드를 할 때마다 [자동으로 업로드](https://docs.sentry.io/platforms/javascript/sourcemaps/#webpack) 되도록 설정 할 수 있고, [직접 업로드](https://docs.sentry.io/platforms/javascript/sourcemaps/#uploading-source-maps-to-sentry) 할 수도 있고, 만약에 [Sourcemap 파일이 공개](https://docs.sentry.io/platforms/javascript/sourcemaps/#hosting-source-map-files) 되어 있다면 별도의 설정 없이 바로 minified 되지 않은 이름을 볼 수 있습니다.
+Sentry 에서 minified 되지 않은 이름을 보려면 Sourcemap 이라는 것을 사용해야 하는데요. 빌드를 할 때마다 [자동으로 업로드](https://docs.sentry.io/platforms/javascript/sourcemaps/#webpack) 되도록 설정할 수 있고, [직접 업로드](https://docs.sentry.io/platforms/javascript/sourcemaps/#uploading-source-maps-to-sentry) 할 수도 있고, 만약에 [Sourcemap 파일이 공개](https://docs.sentry.io/platforms/javascript/sourcemaps/#hosting-source-map-files) 되어 있다면 별도의 설정 없이 바로 minified 되지 않은 이름을 볼 수 있습니다.
 
 ### 정리
 
-이번 튜토리얼에서는 `componentDidCatch` 의 사용법을 알아보고, Sentry 와 연동하는 방법도 알아보았습니다. Sentry와 연동하는 작업은 필수는 아니지만, 해두면 여러분의 프로젝트에서 발생 할 수 있는 버그를 관리 할 때 매우 도움이 될 것입니다.
+이번 튜토리얼에서는 `componentDidCatch` 의 사용법을 알아보고, Sentry 와 연동하는 방법도 알아보았습니다. Sentry와 연동하는 작업은 필수는 아니지만, 해두면 여러분의 프로젝트에서 발생할 수 있는 버그를 관리할 때 매우 도움이 될 것입니다.
