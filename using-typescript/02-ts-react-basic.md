@@ -9,7 +9,7 @@
 타입스크립트를 사용하는 리액트 프로젝트를 만들때는 다음과 같이 명령어를 사용하세요.
 
 ```bash
-$ npx create-react-app ts-react-tutorial --typescript
+$ npx create-react-app ts-react-tutorial --template typescript
 ```
 
 위와 같이 뒤에 `--typescript` 가 있으면 타입스크립트 설정이 적용된 프로젝트가 생성된답니다.
