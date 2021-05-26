@@ -572,7 +572,7 @@ counter.ts 를 다음과 같이 수정해보세요.
 #### src/modules/counter.ts
 ```javascript
 import {
-  createStandardAction,
+  createAction,
   ActionType,
   createReducer
 } from 'typesafe-actions';
@@ -583,9 +583,9 @@ const DECREASE = 'counter/DECREASE';
 const INCREASE_BY = 'counter/INCREASE_BY';
 
 // 액션 생성함수를 선언합니다
-export const increase = createStandardAction(INCREASE)();
-export const decrease = createStandardAction(DECREASE)();
-export const increaseBy = createStandardAction(INCREASE_BY)<number>(); // payload 타입을 Generics 로 설정해주세요.
+export const increase = createAction(INCREASE)();
+export const decrease = createAction(DECREASE)();
+export const increaseBy = createAction(INCREASE_BY)<number>(); // payload 타입을 Generics 로 설정해주세요.
 
 // 액션 객체 타입 준비
 const actions = { increase, decrease, increaseBy }; // 모든 액션 생성함수들을 actions 객체에 넣습니다
@@ -641,7 +641,7 @@ export default App;
 
 ```javascript
 import {
-  createStandardAction,
+  createAction,
   ActionType,
   createReducer
 } from 'typesafe-actions';
@@ -652,9 +652,9 @@ const DECREASE = 'counter/DECREASE';
 const INCREASE_BY = 'counter/INCREASE_BY';
 
 // 액션 생성함수를 선언합니다
-export const increase = createStandardAction(INCREASE)();
-export const decrease = createStandardAction(DECREASE)();
-export const increaseBy = createStandardAction(INCREASE_BY)<number>(); // payload 타입을 Generics 로 설정해주세요.
+export const increase = createAction(INCREASE)();
+export const decrease = createAction(DECREASE)();
+export const increaseBy = createAction(INCREASE_BY)<number>(); // payload 타입을 Generics 로 설정해주세요.
 
 // 액션 객체 타입 준비
 const actions = { increase, decrease, increaseBy }; // 모든 액션 생성함수들을 actions 객체에 넣습니다
@@ -687,15 +687,15 @@ export default counter;
 
 ```javascript
 import {
-  createStandardAction,
+  createAction,
   ActionType,
   createReducer
 } from 'typesafe-actions';
 
 // 액션 생성함수를 선언합니다
-export const increase = createStandardAction('counter/INCREASE')();
-export const decrease = createStandardAction('counter/DECREASE')();
-export const increaseBy = createStandardAction('counter/INCREASE_BY')<number>(); // payload 타입을 Generics 로 설정해주세요.
+export const increase = createAction('counter/INCREASE')();
+export const decrease = createAction('counter/DECREASE')();
+export const increaseBy = createAction('counter/INCREASE_BY')<number>(); // payload 타입을 Generics 로 설정해주세요.
 
 // 액션 객체 타입 준비
 const actions = { increase, decrease, increaseBy }; // 모든 액션 생성함수들을 actions 객체에 넣습니다
@@ -727,12 +727,12 @@ export default counter;
 이렇게 액션의 `type` 대신에 생성 함수를 참조하여 리듀서를 구현을 해주면 모든 액션 객체들의 타입인 `CounterAction` 을 준비하는것도 생략 할 수 있습니다. 그리고, `createReducer` 를 사용 할 때 해당 함수의 Generics 자체를 생략해도 상관 없게 됩니다.
 
 ```javascript
-import { createStandardAction, createReducer } from 'typesafe-actions';
+import { createAction, createReducer } from 'typesafe-actions';
 
 // 액션 생성함수를 선언합니다
-export const increase = createStandardAction('counter/INCREASE')();
-export const decrease = createStandardAction('counter/DECREASE')();
-export const increaseBy = createStandardAction('counter/INCREASE_BY')<number>(); // payload 타입을 Generics 로 설정해주세요.
+export const increase = createAction('counter/INCREASE')();
+export const decrease = createAction('counter/DECREASE')();
+export const increaseBy = createAction('counter/INCREASE_BY')<number>(); // payload 타입을 Generics 로 설정해주세요.
 
 // 이 리덕스 모듈에서 관리 할 상태의 타입을 선언합니다
 type CounterState = {
@@ -767,7 +767,6 @@ todos 리덕스 모듈도 방금 했던 것 처럼 `typesafe-actions` 를 사용
 ```javascript
 import {
   /* action, */
-  createStandardAction,
   createAction,
   ActionType,
   createReducer
@@ -796,8 +795,8 @@ export const addTodo = createAction(ADD_TODO, action => (text: string) =>
 // export const addTodo = (text: string) => action(ADD_TODO, { id: nextId++, text })
 
 // payload가 그대로 들어가는 액션생성함수는 정말 간단합니다.
-export const toggleTodo = createStandardAction(TOGGLE_TODO)<number>();
-export const removeTodo = createStandardAction(REMOVE_TODO)<number>();
+export const toggleTodo = createAction(TOGGLE_TODO)<number>();
+export const removeTodo = createAction(REMOVE_TODO)<number>();
 
 // 모든 액션 객체들에 대한 타입 준비
 const actions = {
@@ -900,7 +899,7 @@ modules 디렉터리에 todos 디렉터리를 만들고, 먼저 actions.ts 부�
 
 #### src/modules/todos/actions.ts
 ```javascript
-import { createAction, createStandardAction } from 'typesafe-actions';
+import { createAction } from 'typesafe-actions';
 
 // 리듀서에서 사용 할 수 있도록 타입도 내보내줍니다.
 export const ADD_TODO = 'todos/ADD_TODO';
@@ -925,8 +924,8 @@ export const addTodo = createAction(ADD_TODO, action => (text: string) =>
 // export const addTodo = (text: string) => action(ADD_TODO, { id: nextId++, text })
 
 // payload가 그대로 들어가는 액션생성함수는 정말 간단합니다.
-export const toggleTodo = createStandardAction(TOGGLE_TODO)<number>();
-export const removeTodo = createStandardAction(REMOVE_TODO)<number>();
+export const toggleTodo = createAction(TOGGLE_TODO)<number>();
+export const removeTodo = createAction(REMOVE_TODO)<number>();
 ```
 
 그 다음에는 액션객체들의 타입과 상태의 타입들을 선언 할 types.ts 를 todos 디렉터리에 다음과 같이 작성해보세요.
