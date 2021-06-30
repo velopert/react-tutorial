@@ -8,7 +8,7 @@ redux-thunk를 배울 때 사용했던 thunk 함수를 다시 한번 확인해�
 export const getPosts = () => async dispatch => {
   dispatch({ type: GET_POSTS }); // 요청이 시작됨
   try {
-    const posts = postsAPI.getPosts(); // API 호출
+    const posts = await postsAPI.getPosts(); // API 호출
     dispatch({ type: GET_POSTS_SUCCESS, posts }); // 성공
   } catch (e) {
     dispatch({ type: GET_POSTS_ERROR, error: e }); // 실패
