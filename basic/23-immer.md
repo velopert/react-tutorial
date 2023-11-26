@@ -304,7 +304,7 @@ console.log(nextTodo);
 // { text: 'Hello', done: true }
 ```
 
-결국 `produce` 가 반환하는것이 업데이트 함수가 되기 때문에 `useState` 의 업데이트 함수를 사용 할 떄 다음과 같이 구현 할 수 있게 되지요.
+결국 `produce` 가 반환하는것이 업데이트 함수가 되기 때문에 `useState` 의 업데이트 함수를 사용 할 때 다음과 같이 구현 할 수 있게 되지요.
 
 ```javascript
 const [todo, setTodo] = useState({
